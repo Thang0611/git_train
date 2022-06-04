@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.js">
+    <title>Document</title>
+</head>
+<body> 
+<script>
+    Array.prototype.map2=function(callback){
+        let arrayLeng=this.length;
+        let output=[];
+        for (let i =0 ;i<arrayLeng;i++){
+            result=callback(this[i])
+            output.push(result);
+        }
+        return output;
+    }
+    let courses=["Hà Nôi", "Thái Nguyên","Hải Phòng"];
+    function myFunction(course){
+        return `<h2>${this.course}</h2>`;
+    }
+    var html=courses.map2(function(course){
+        return `<h2>${this.course}</h2>`;
+    });
+    console.log(html)
+</script>
+</body>
+</html>
